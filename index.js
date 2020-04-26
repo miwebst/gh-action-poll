@@ -72,7 +72,7 @@ const checkAndPoll = async () => {
     while (!areAllStepsCompleted)
     {
         // Wait 15 seconds then poll again
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 15000));
         jobResponse = await makeGithubGetRequest(jobPath);
         steps = jobResponse.data.steps;
         areAllStepsCompleted = steps.every((step) => step.status === 'completed');
